@@ -91,17 +91,21 @@ textarea:not([rows]) {
 
 body {
   background: linear-gradient(165deg, darkblue, black);
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Inconsolata";
   padding: 1rem;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main {
+  min-width: 15rem;
   max-width: 20rem;
   border-radius: 1rem;
   overflow: hidden;
-  background-color: hsla(0, 0%, 100%, 0.81);
+  background-color: #f4f9fa;
   box-shadow: 0 0 10px hsla(155, 59%, 72%, 0.909);
 }
 
@@ -153,7 +157,7 @@ body {
 }
 
 .seating__options__container {
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,29 +165,101 @@ body {
 }
 
 .seating__option {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .25rem;
-    padding: 0 .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
 }
 
 .seating__options__text {
-    margin: 0;
+  margin: 0;
 }
 
 .seating__options .fa-couch {
-    font-size: .8rem;
+  font-size: 0.8rem;
 }
 
-.seating__options .available {
-    color: green;
+.available {
+  color: green;
 }
 
-.seating__options .selected {
-    color: rgb(148, 47, 130);
+.selected {
+  color: rgb(148, 47, 130);
 }
 
-.seating__options .booked {
-    color: grey;
+.booked {
+  color: grey;
+}
+
+.seating__chart {
+  height: auto;
+  width: 100%;
+}
+
+.seating__chart__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.seating__chart__row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1.25rem;
+}
+
+.seating__chart__row--section {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  gap: 0.3rem;
+}
+
+.seating__chart__row--label {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.order__container {
+  max-width: 100%;
+  background-color: hsla(329, 74%, 41%, 0.84);
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.order__titles {
+  max-width: 25%;
+  padding: 0 1rem;
+  background-color: hsl(329, 74%, 40%);
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 1rem;
+}
+
+.order__info {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+}
+
+.order__button {
+  margin-right: 1rem;
+  font-size: 1rem;
+  padding: 1rem 0.75rem;
+  border: none;
+  background-color: hsla(329, 74%, 99%, 0.84);
+  border-radius: 0.5rem;
+}
+
+.order__button:hover {
+  background-color: hsla(240, 74%, 49%, 0.84);
+  color: white;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
